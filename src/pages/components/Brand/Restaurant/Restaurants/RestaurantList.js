@@ -1,19 +1,24 @@
 import Card from "../../../UI/Card/Card.js";
 import RestaurantItem from "../RestaurantItem/RestaurantItem";
-import classes from "./Restaurants.module.scss";
-import RestaurantsSummary from "../../Restaurant/RestaurantsSummary/RestaurantsSummary";
+import classes from "./RestaurantList.module.scss";
+import RestaurantsSummary from "../RestaurantsSummary/RestaurantsSummary";
 import { useEffect } from "react";
 import API from "../../../../../util/API.js";
+import { useState } from "react";
 
-export default function Restaurants(props) {
+export default function RestaurantList(props) {
+  const [isLoading, setIsLoading] = useState(false);
   const [restaurants, setRestaurants] = useState([]);
 
   const getRestaurants = async () => {
     try {
+      setIsLoading(true);
       const response = await API.get("/restaurant/getrestaurants");
       setRestaurants(response.data);
     } catch (e) {
       console.error(e);
+    } finally {
+      setIsLoading(false);
     }
   };
 
