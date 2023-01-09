@@ -63,8 +63,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+TThis template tries to demonstrate a complete microservice that uses AWS services to create a simple serverless API. It uses CloudFormation to create the following and relate all of them to one another as needed:
 
-### `npm run build` fails to minify
+#### AWS services
+- API Methods (GET / POST)
+- Lambda Function: This is what implements the logic for the service, and the API code for the function is also part of this repo.
+- DynamoDB Table: Configured to be used by the Lambda function.
+- IAM Roles and Policies: So that the API can invoke the function and the function has access to necessary resources.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Edit ```configmap.json``` to fill in your own values.
+Run the following command:
+```
+aws cloudformation create-stack --stack-name <YOURSTACKNAME-CAN-BE-ANYTHING> \
+    --template-body file://./cloudformation/complete-api.template \
+    --parameters=file://./cloudformation/api-params.json \
+    --capabilities CAPABILITY_IAM
+  ```
+If you want to monitor the status of your stack creation on the CLI, you can use this command:
+
+```aws cloudformation describe-stacks --query='Stacks[*].{ Name: StackName, Status: StackStatus }'```
+ 
+
