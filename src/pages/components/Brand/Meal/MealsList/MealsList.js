@@ -26,12 +26,6 @@ export default function MealsList(props) {
       description: "American, raw, meaty",
       price: 650,
     },
-    {
-      id: "m4",
-      name: "Green Bowl",
-      description: "Healthy...and green...",
-      price: 450,
-    },
   ];
   
 
