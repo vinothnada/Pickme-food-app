@@ -74,10 +74,10 @@ TThis template tries to demonstrate a complete microservice that uses AWS servic
 Edit ```configmap.json``` to fill in your own values.
 Run the following command:
 ```
-aws cloudformation create-stack --stack-name <YOURSTACKNAME-CAN-BE-ANYTHING> \
-    --template-body file://./cloudformation/complete-api.template \
-    --parameters=file://./cloudformation/api-params.json \
-    --capabilities CAPABILITY_IAM
+aws cloudformation create-stack --stack-name PickMeFoodApp \
+    --template-body file://./cloudformation.template \
+    --parameters=file://./configmap.json \
+    --capabilities PICKME_FOOD_APP_IAM
   ```
 If you want to monitor the status of your stack creation on the CLI, you can use this command:
 
