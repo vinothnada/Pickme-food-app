@@ -165,7 +165,7 @@
             "parentId": { "Fn::GetAtt": [ "MainAPI", "parentResourceId" ] },
             "pathPart": { "Ref": "APIPath" },
             "corsConfiguration": {
-               "allowMethods": [ "GET", "POST" ],
+               "allowMethods": [ "GET", "POST" , "PUT", "DELETE"],
                "allowHeaders": [ "x-my-header", "some-other-header" ],
                "allowDefaultHeaders": true,
                "allowOrigin": "*",
