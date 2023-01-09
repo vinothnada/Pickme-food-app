@@ -1,0 +1,18 @@
+[
+   {
+      "ParameterKey": "APIName",
+      "ParameterValue": "pickme-food-api"
+   },
+   {
+      "ParameterKey": "LambdaCodeBucket",
+      "ParameterValue": "pickme-food-api-lambda-api-code"
+   },
+   {
+      "ParameterKey": "LambdaCodePath",
+      "ParameterValue": "pickme-food-api.zip"
+   },
+   {
+      "ParameterKey": "APIGatewayCustomResourceARN",
+      "ParameterValue": "arn:aws:lambda:us-east-1:123456789012:function:APIGatewayCustomResource-LambdaFunction-ABCDEFGHIJ123"
+   }
+]
