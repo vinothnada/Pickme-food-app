@@ -1,15 +1,15 @@
 [
    {
       "ParameterKey": "APIName",
-      "ParameterValue": "automatically-created-api"
+      "ParameterValue": "pickme-food-api"
    },
    {
       "ParameterKey": "LambdaCodeBucket",
-      "ParameterValue": "cfn-simple-lambda-api-code"
+      "ParameterValue": "pickme-food-api-lambda-api-code"
    },
    {
       "ParameterKey": "LambdaCodePath",
-      "ParameterValue": "cloudformation-template-for-lambda-backed-api-gateway-with-dynamodb.zip"
+      "ParameterValue": "pickme-food-api.zip"
    },
    {
       "ParameterKey": "APIGatewayCustomResourceARN",
